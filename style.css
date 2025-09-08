@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,67 +7,83 @@
   font-family: "Poppins", sans-serif;
 }
 
-body{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(45deg,#0e0c0c, #3a4452);
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #0e0c0c, #3a4452);
 }
 
-.calculator{
-    border: 1px solid #717377;
-    padding: 20px;
-    border: 1px solid rgb(2, 72, 70);
-    border-radius: 15px;
-    background: rgba(5, 71, 66, 0.79);
-    box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+.calculator {
+  border: 1px solid rgb(2, 72, 70);
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(5, 71, 66, 0.79);
+  box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+  width: 100%;
+  max-width: 450px; /* ✅ prevent it from stretching too much on big screens */
 }
 
-input{
-    width: 433px;
-    border: 1px solid grey;
-    padding: 10px;
-    margin: 10px;
-    background: #ebe8e8;
-    box-shadow: 0px 3px 15px rgba(84, 84, 84,0.1);
-    text-align: right;
-    cursor: pointer;
-    border-radius: 7px;
-    color: black;
-    font-size: 60px ;
+input {
+  width: 100%; /* ✅ full width inside calculator */
+  border: 1px solid grey;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: #ebe8e8;
+  box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.1);
+  text-align: right;
+  cursor: pointer;
+  border-radius: 7px;
+  color: black;
+  font-size: 2rem; /* ✅ scales better */
 }
 
-input::placeholder{
-    color:#0e0c0c;
+input::placeholder {
+  color: #0e0c0c;
 }
 
-button{
-    border: none;
-    border-radius: 7px;
-    width: 90px;
+button {
+  border: none;
+  border-radius: 7px;
+  width: 22%; /* ✅ buttons take percentage instead of fixed px */
+  height: 60px;
+  margin: 1%;
+  background: #eae5e5;
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: -4px -4px 10px rgba(170, 158, 158, 0.1);
+}
+
+.equalBtn {
+  background-color: rgb(193, 169, 48);
+  border: 1px solid rgb(179, 179, 154);
+}
+
+.operator {
+  background-color: rgb(93, 165, 83);
+  color: #ffffff;
+  border: 1px solid rgb(174, 164, 164);
+}
+
+#AC {
+  background-color: rgb(61, 61, 164);
+  border: 1px solid rgb(133, 128, 122);
+}
+
+/* ✅ Mobile adjustments */
+@media (max-width: 480px) {
+  input {
+    font-size: 1.5rem;
     height: 60px;
-    margin: 10px;
-    background: #eae5e5;
-    color: black;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: -8px -8px 15px rgba(170, 158, 158, 0.1);
-}
+  }
 
-.equalBtn{
-    background-color: rgb(193, 169, 48);
-    border: 1px solid rgb(179, 179, 154);
-}
-
-.operator{
-    background-color: rgb(93, 165, 83);
-    color: #ffffff;
-    border: 1px solid rgb(174, 164, 164);
-}
-
-#AC{
-    background-color: rgb(61, 61, 164);
-    border: 1px solid rgb(133, 128, 122);
+  button {
+    width: 22%;
+    height: 50px;
+    font-size: 1rem;
+    margin: 1%;
+  }
 }
