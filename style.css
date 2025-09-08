@@ -44,12 +44,16 @@ input::placeholder {
   color: #0e0c0c;
 }
 
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 10px;
+}
+
 button {
   border: none;
   border-radius: 7px;
-  width: 22%; /* ✅ buttons take percentage instead of fixed px */
   height: 60px;
-  margin: 1%;
   background: #eae5e5;
   color: black;
   font-size: 1.2rem;
@@ -58,6 +62,7 @@ button {
 }
 
 .equalBtn {
+  grid-column: span 2; /* makes = button double width */
   background-color: rgb(193, 169, 48);
   border: 1px solid rgb(179, 179, 154);
 }
